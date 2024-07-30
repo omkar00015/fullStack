@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+.project
+.classpath
+
+# Ignore server-specific files (if any)
+server/node_modules/
+server/.env
+
+# Ignore package.json and package-lock.json in the server folder
+package.json
+package-lock.json
