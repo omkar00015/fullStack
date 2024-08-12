@@ -24,3 +24,5 @@ server/.env
 # Ignore package.json and package-lock.json in the server folder
 package.json
 package-lock.json
+
+.eslintrc
