@@ -5,7 +5,18 @@ import ProfilePage from 'scenes/profilePage';
 
 
 function App() {
-  return (
+
+
+
+
+
+
+
+
+   
+
+   
+            return (
     <div className="app">
     <BrowserRouter>
     <Routes>
