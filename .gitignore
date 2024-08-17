@@ -26,5 +26,3 @@ package.json
 package-lock.json
 
 .eslintrc
-.lintstagedrc
-eslint.config.js
