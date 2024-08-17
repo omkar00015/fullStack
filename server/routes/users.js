@@ -3,9 +3,9 @@ import {
     getUser,
     getUserFriends,
     addRemoveFriend,
-} from "../controllers/user.js";
+} from "../controllers/users.js";
 import { verifyToken } from "../middleware/auth.js";
-import { get } from "mongoose";
+
 
 
 const router = express.Router();
