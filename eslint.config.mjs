@@ -19,8 +19,8 @@ export default [
       "semi": ["error", "always"],
 
       // React-specific rules
-      "react/react-in-jsx-scope": "off", // Next.js users may turn this off
-      "react/prop-types": "off", // Turn this on if using PropTypes
+      "react/react-in-jsx-scope": "off", 
+      "react/prop-types": "off", 
       "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".js"] }],
 
       // Prettier integration
