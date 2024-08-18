@@ -1,4 +1,2 @@
 #!/bin/sh
-# Update: Directly include commands without sourcing husky.sh
-
 npx lint-staged
