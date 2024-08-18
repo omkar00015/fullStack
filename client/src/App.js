@@ -4,10 +4,6 @@ import LoginPage from 'scenes/loginPage';
 import ProfilePage from 'scenes/profilePage';
 
 function App() {
-
-
-
-  
   return (
     <div className="app">
       <BrowserRouter>
