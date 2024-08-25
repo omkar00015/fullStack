@@ -1,10 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import authReducer from "./state";
-import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
+
+/// <reference types="redux-persist/types" /> 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App.js';
+import authReducer from './state/index.js';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 import {
   FLUSH,
   REHYDRATE,
@@ -12,29 +14,34 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { PersistGate } from "redux-persist/integration/react";
-import persistReducer from "redux-persist/es/persistReducer";
-import persistStore from "redux-persist/es/persistStore";
+} from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 
-const persistConfig = { key: "root", storage, version: 1 };
+
+const storage = require('redux-persist/lib/storage');
+const { PersistGate } = require('redux-persist/integration/react');
+
+
+
+
+const persistConfig = { key: 'root', storage, version: 1 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoreActions: [FLUSH, REGISTER, REHYDRATE, PAUSE, PERSIST, PURGE],
+        ignoredActions: [FLUSH, REGISTER, REHYDRATE, PAUSE, PERSIST, PURGE],
       },
     }),
 });
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistStore(store)}></PersistGate>
+      <PersistGate loading={null} persistor={persistStore(store)}>
+        <App />
+      </PersistGate>
     </Provider>
-    <App />
   </React.StrictMode>
 );
